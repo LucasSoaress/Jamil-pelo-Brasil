@@ -1,0 +1,121 @@
+fileFormatVersion: 2
+guid: a3e6a8b7dda8ff74f83611e9b33a03bd
+timeCreated: 1476203609
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Jamil_Correndo_0
+    21300002: Jamil_Correndo_1
+    21300004: Jamil_Correndo_2
+    21300006: Jamil_Correndo_3
+    21300008: Jamil_Correndo_4
+    21300010: Jamil_Correndo_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Jamil_Correndo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 797
+        height: 1622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jamil_Correndo_1
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 5
+        width: 961
+        height: 1625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jamil_Correndo_2
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 25
+        width: 1224
+        height: 1607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jamil_Correndo_3
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 12
+        width: 982
+        height: 1605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jamil_Correndo_4
+      rect:
+        serializedVersion: 2
+        x: 4790
+        y: 19
+        width: 849
+        height: 1608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Jamil_Correndo_5
+      rect:
+        serializedVersion: 2
+        x: 5873
+        y: 0
+        width: 1057
+        height: 1627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
