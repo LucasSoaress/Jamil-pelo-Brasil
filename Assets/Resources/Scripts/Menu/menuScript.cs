@@ -4,8 +4,10 @@ using System.Collections;
 
 public class menuScript : MonoBehaviour 
 {
+    public GameObject menuzinho;
+
 	public void abrirJogo()
     {
-        Application.LoadLevel("Sudeste");
+       menuzinho.GetComponent<Animator>().SetInteger("posicao",4);
     }
 }
