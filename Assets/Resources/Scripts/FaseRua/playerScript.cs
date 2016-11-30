@@ -12,69 +12,71 @@ public class playerScript : MonoBehaviour
     public string Cena;
     public string Fim;
 	public static int contadorColetaveis;
+    private static int vida;
 
 	void Start () 
     {
         rb = GetComponent<Rigidbody2D>();
         pulando = false;
         contadorColetaveis = 0;
+        vida = 3;
 	}
 	
 	
 	void Update () 
     {
-		    if (Input.GetKey(KeyCode.D))
-	        {
-	            movimento(speedX);
+        if (!gambiarraAnimacao.pausa)
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                movimento(speedX);
 
-	            if (transform.localScale.x < 0)
-	            {
-	                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-	            }
-	            GetComponent<Animator>().SetBool("correndo", true);
-	        }
+                if (transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                }
+                GetComponent<Animator>().SetBool("correndo", true);
+            }
 
-	        if (Input.GetKey(KeyCode.A))
-	        {
-	            movimento(- speedX);
+            if (Input.GetKey(KeyCode.A))
+            {
+                movimento(-speedX);
 
-	            if (transform.localScale.x > 0)
-	            {
-	                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-	            }
-	            GetComponent<Animator>().SetBool("correndo", true);
-	        }
-	        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-	            GetComponent<Animator>().SetBool("correndo", false);
+                if (transform.localScale.x > 0)
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                }
+                GetComponent<Animator>().SetBool("correndo", true);
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+                GetComponent<Animator>().SetBool("correndo", false);
 
-			//Pulo inicial
-	        if (Input.GetKeyUp(KeyCode.Space) && pulando == false && contadorPulo == 0)
-	        {
-	            rb.AddForce(new Vector2(0f, valor));
-	            pulando = true;
-	            contadorPulo = 1;
-	            GetComponent<Animator>().SetBool("pulando", true);
-	        }
+            //Pulo inicial
+            if (Input.GetKeyUp(KeyCode.Space) && pulando == false && contadorPulo == 0)
+            {
+                rb.AddForce(new Vector2(0f, valor));
+                pulando = true;
+                contadorPulo = 1;
+                GetComponent<Animator>().SetBool("pulando", true);
+            }
 
-			//Pulo duplo
-			/*if (Input.GetKeyDown(KeyCode.Space) && pulando == true && contadorPulo == 1)
-			{
-				rb.AddForce(new Vector2(0f, valor/2));
-				pulando = true;
-				contadorPulo = 2;
-				GetComponent<Animator>().SetBool("pulando", true);
-			}*/ 
-			
-			//Pulo quando esta em cima de um objeto alto
-	        if (Input.GetKeyDown(KeyCode.Space) && pulando == false && contadorPulo == 3)
-	        {
-	            rb.AddForce(new Vector2(0f, valor - 100));
-	            pulando = true;
-	            contadorPulo = 0;
-	            GetComponent<Animator>().SetBool("pulando", true);
-	        }
-		 
-	}
+            
+            if (Input.GetKeyDown(KeyCode.Space) && pulando == false && contadorPulo == 3)
+            {
+                rb.AddForce(new Vector2(0f, valor - 100));
+                pulando = true;
+                contadorPulo = 0;
+                GetComponent<Animator>().SetBool("pulando", true);
+            }
+
+            if (vida <= 0)
+            {
+                Application.LoadLevel("Menu");
+            }
+
+        }
+
+    }
 
     void movimento(float speed)
     {
@@ -135,6 +137,12 @@ public class playerScript : MonoBehaviour
         if(coll.gameObject.tag == "Homem do Saco")
         {
             Application.LoadLevel("gameOver");
+        }
+
+        if(coll.gameObject.tag == "Coco")
+        {
+            vida--;
+            Destroy(coll.gameObject);
         }
     }
 }
